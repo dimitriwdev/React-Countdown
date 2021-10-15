@@ -11,20 +11,22 @@ const useStyles = makeStyles(() => ({
     },
     countdownContainer: {
         display: 'flex',
-        marginTop: '50px',
     },
     timeBlock: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        margin: '20px 20px',
+        margin: '0 20px',
     },
     time: {
         fontSize: '70px',
         color: '#fff',
         textShadow: '3px 3px rgba(50, 50, 70, 0.5)',
         width: '2ch',
+        '@media (max-width: 780px)': {
+            fontSize: '30px',
+        }
     },
     timeRef: {
         color: '#fff',

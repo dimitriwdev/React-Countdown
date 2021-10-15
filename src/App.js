@@ -11,13 +11,29 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     fontFamily: 'Arial',
     justifyContent: 'center',
-    background: 'linear-gradient(135deg, #022061 0%, #C9F6FF 100%)',
+    background: 'linear-gradient(135deg, rgb(2, 32, 97) 0%, rgb(201,246,255) 100%)',
     minHeight: '100vh',
+    minWidth: '100vw',
   },
   title: {
     color: '#fff',
     textShadow: '3px 3px rgba(50, 50, 70, 0.5)',
-    marginBottom: '70px',
+  },
+  datePicker: {
+    fontSize: '20px',
+    padding: '15px',
+    borderRadius: '15px',
+    border: 'none',
+    textAlign: 'center',
+    outline: 'none',
+    background: 'rgba(255, 255, 255, 0.2)',
+    textShadow: '1px 1px rgba(50, 50, 70, 0.5)',
+    color: '#fff',
+    margin: '100px',
+    '&:focus': {
+      background: '#fff',
+      color: '#000',
+    },
   },
 }))
 const App = () => {
@@ -33,6 +49,7 @@ const App = () => {
       <h1 className={classes.title}>Pick a date</h1>
       <div>
         <DatePicker
+          className={classes.datePicker}
           dateFormat='dd/MM/yyyy'
           minDate={tomorrowMidnight}
           onChange={date => setSelectedDate(date)}

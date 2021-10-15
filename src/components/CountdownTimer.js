@@ -23,18 +23,18 @@ const getRemainingSeconds = (nowDayjs, timestampDayJs) => {
 export const CountdownTimer = (timestampMs) => {
     const timestampDayJs = dayjs(timestampMs);
     const nowDayjs = dayjs();
-    if (timestampDayJs.isBefore(nowDayjs)){
+    if (timestampDayJs.isBefore(nowDayjs)) {
         return {
-            days: '00', 
-            hours: '00', 
-            minutes: '00', 
+            days: '00',
+            hours: '00',
+            minutes: '00',
             seconds: '00',
         }
     } else {
         return {
-            days: getRemainingDays(nowDayjs, timestampDayJs), 
-            hours: getRemainingHours(nowDayjs, timestampDayJs), 
-            minutes: getRemainingMinutes(nowDayjs, timestampDayJs), 
+            days: getRemainingDays(nowDayjs, timestampDayJs),
+            hours: getRemainingHours(nowDayjs, timestampDayJs),
+            minutes: getRemainingMinutes(nowDayjs, timestampDayJs),
             seconds: getRemainingSeconds(nowDayjs, timestampDayJs),
         }
     }

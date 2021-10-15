@@ -11,9 +11,10 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     fontFamily: 'Arial',
     justifyContent: 'center',
-    background: 'linear-gradient(135deg, rgb(2, 32, 97) 0%, rgb(201,246,255) 100%)',
+    background: 'linear-gradient(135deg, rgb(95, 10, 135) 0%, rgb(164, 80, 139) 100%)',
     minHeight: '100vh',
     minWidth: '100vw',
+
   },
   title: {
     color: '#fff',
@@ -36,6 +37,7 @@ const useStyles = makeStyles(() => ({
     },
   },
 }))
+
 const App = () => {
   const classes = useStyles();
   const date = new Date();

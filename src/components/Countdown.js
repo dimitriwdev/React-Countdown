@@ -8,13 +8,10 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-      height: '75vh',
     },
     countdownContainer: {
         display: 'flex',
-        padding: '30px',
-        borderRadius: '100px',
-        backgroundColor: 'skyblue',
+        marginTop: '50px',
     },
     timeBlock: {
         display: 'flex',
@@ -25,20 +22,27 @@ const useStyles = makeStyles(() => ({
     },
     time: {
         fontSize: '70px',
+        color: '#fff',
+        textShadow: '3px 3px rgba(50, 50, 70, 0.5)',
+        width: '2ch',
+    },
+    timeRef: {
+        color: '#fff',
+        textShadow: '2px 2px rgba(50, 50, 70, 0.5)',
     },
 }))
 
 const defaultRemainingTime = {
-    days: '00', 
-    hours: '00', 
-    minutes: '00', 
+    days: '00',
+    hours: '00',
+    minutes: '00',
     seconds: '00'
 }
 
 const Countdown = ({ countdownTimestampMs }) => {
     const classes = useStyles();
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
-    
+
     useEffect(() => {
         const intervalId = setInterval(() => {
             updateRemainingTime(countdownTimestampMs)
@@ -55,23 +59,23 @@ const Countdown = ({ countdownTimestampMs }) => {
             <div className={classes.countdownContainer}>
                 <div className={classes.timeBlock}>
                     <span className={classes.time}>{remainingTime.days}</span>
-                    <span>days</span>
+                    <span className={classes.timeRef}>days</span>
                 </div>
                 <div className={classes.timeBlock}>
                     <span className={classes.time}>{remainingTime.hours}</span>
-                    <span>hours</span>
+                    <span className={classes.timeRef}>hours</span>
                 </div>
                 <div className={classes.timeBlock}>
                     <span className={classes.time}>{remainingTime.minutes}</span>
-                    <span>minutes</span>
+                    <span className={classes.timeRef}>minutes</span>
                 </div>
                 <div className={classes.timeBlock}>
                     <span className={classes.time}>{remainingTime.seconds}</span>
-                    <span>seconds</span>
+                    <span className={classes.timeRef}>seconds</span>
                 </div>
             </div>
         </div>
-      );
-    };
-    
-    export default Countdown;
+    );
+};
+
+export default Countdown;
